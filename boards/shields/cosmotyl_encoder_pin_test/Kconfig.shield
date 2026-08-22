@@ -1,0 +1,2 @@
+config SHIELD_COSMOTYL_ENCODER_PIN_TEST
+    def_bool $(shields_list_contains,cosmotyl_encoder_pin_test)

@@ -1,0 +1,6 @@
+if SHIELD_COSMOTYL_ENCODER_PIN_TEST
+
+config ZMK_KEYBOARD_NAME
+    default "Cosmotyl Enc Pin Test"
+
+endif
