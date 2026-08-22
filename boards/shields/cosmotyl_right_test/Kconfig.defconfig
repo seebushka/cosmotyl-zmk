@@ -1,0 +1,6 @@
+if SHIELD_COSMOTYL_RIGHT_TEST
+
+config ZMK_KEYBOARD_NAME
+    default "Cosmotyl R Test"
+
+endif
