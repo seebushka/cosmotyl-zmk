@@ -91,6 +91,10 @@ static void update_status_leds(struct k_work *work)
         }
     }
 
+    LOG_INF("battery cache: L=%u%% %s, R=%u%% %s",
+            (unsigned int)battery_level[0], battery_valid[0] ? "valid" : "waiting",
+            (unsigned int)battery_level[1], battery_valid[1] ? "valid" : "waiting");
+
     led_strip_update_rgb(strip, pixels, 2);
 
     blink_on = !blink_on;
