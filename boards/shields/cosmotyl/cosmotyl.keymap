@@ -6,8 +6,8 @@
         compatible = "zmk,keymap";
 
         default_layer {
-            /* Temporary encoder test action: 8 / 9 */
-            sensor-bindings = <&inc_dec_kp N8 N9>;
+            /* Encoder: clockwise volume up, counterclockwise volume down */
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
 
             bindings = <
                 /* MATRIX ROW 0 */
