@@ -1,0 +1,39 @@
+#include "cosmotyl.dtsi"
+
+/ {
+    chosen {
+        zmk,kscan = &kscan0;
+    };
+
+    kscan0: kscan0 {
+        compatible = "zmk,kscan-gpio-matrix";
+        diode-direction = "col2row";
+        wakeup-source;
+
+        /* LEFT ROWS: R0 R1 R2 R3 R4 */
+        row-gpios =
+            <&gpio0 31 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+            <&gpio0 29 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+            <&gpio0  2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+            <&gpio1 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+            <&gpio1 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
+
+        /* LEFT COLUMNS: C0 C1 C2 C3 C4 C5 C6 */
+        col-gpios =
+            <&gpio0 17 GPIO_ACTIVE_HIGH>,
+            <&gpio0 20 GPIO_ACTIVE_HIGH>,
+            <&gpio0 22 GPIO_ACTIVE_HIGH>,
+            <&gpio0 24 GPIO_ACTIVE_HIGH>,
+            <&gpio1  0 GPIO_ACTIVE_HIGH>,
+            <&gpio0 11 GPIO_ACTIVE_HIGH>,
+            <&gpio1  4 GPIO_ACTIVE_HIGH>;
+    };
+};
+
+&physical_layout0 {
+    kscan = <&kscan0>;
+};
+
+&left_encoder {
+    status = "okay";
+};

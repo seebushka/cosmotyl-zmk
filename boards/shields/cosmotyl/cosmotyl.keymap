@@ -1,0 +1,20 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            sensor-bindings = <&inc_dec_kp N8 N9>;
+
+            bindings = <
+                &kp A &kp A &kp A &kp A &kp A &kp A &kp A   &kp B &kp B &kp B &kp B &kp B &kp B &kp B &kp B
+                &kp A &kp A &kp A &kp A &kp A &kp A &kp A   &kp B &kp B &kp B &kp B &kp B &kp B &kp B &kp B
+                &kp A &kp A &kp A &kp A &kp A &kp A &kp A   &kp B &kp B &kp B &kp B &kp B &kp B &kp B &kp B
+                &kp A &kp A &kp A &kp A &kp A &kp A &kp A   &kp B &kp B &kp B &kp B &kp B &kp B &kp B &kp B
+                &kp A &kp A &kp A &kp A &kp A &kp A &kp A   &kp B &kp B &kp B &kp B &kp B &kp B &kp B &kp B
+            >;
+        };
+    };
+};
