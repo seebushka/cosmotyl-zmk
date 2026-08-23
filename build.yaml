@@ -28,6 +28,7 @@ include:
 
   - board: seeeduino_xiao_ble
     shield: cosmotyl_dongle
+    snippet: zmk-usb-logging
     artifact-name: cosmotyl-dongle
 
   - board: nice_nano
