@@ -7,7 +7,7 @@
 
         default_layer {
             /* Encoder: clockwise volume up, counterclockwise volume down */
-            sensor-bindings = <&inc_dec_kp F17 F18>;
+            sensor-bindings = <&inc_dec_kp LC(LS(LA(PG_UP))) LC(LS(LA(PG_DN)))>;
 
             bindings = <
                 /* MATRIX ROW 0 */
