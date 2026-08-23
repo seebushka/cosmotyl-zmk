@@ -29,3 +29,11 @@ include:
   - board: seeeduino_xiao_ble
     shield: cosmotyl_dongle
     artifact-name: cosmotyl-dongle
+
+  - board: nice_nano
+    shield: settings_reset
+    artifact-name: settings-reset-nice-nano
+
+  - board: seeeduino_xiao_ble
+    shield: settings_reset
+    artifact-name: settings-reset-xiao
