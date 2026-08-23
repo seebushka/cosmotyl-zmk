@@ -9,11 +9,11 @@
             sensor-bindings = <&inc_dec_kp N8 N9>;
 
             bindings = <
-                &kp A &kp A &kp A &kp A &kp A &kp A &kp A   &kp B &kp B &kp B &kp B &kp B &kp B &kp B &kp B
-                &kp A &kp A &kp A &kp A &kp A &kp A &kp A   &kp B &kp B &kp B &kp B &kp B &kp B &kp B &kp B
-                &kp A &kp A &kp A &kp A &kp A &kp A &kp A   &kp B &kp B &kp B &kp B &kp B &kp B &kp B &kp B
-                &kp A &kp A &kp A &kp A &kp A &kp A &kp A   &kp B &kp B &kp B &kp B &kp B &kp B &kp B &kp B
-                &kp A &kp A &kp A &kp A &kp A &kp A &kp A   &kp B &kp B &kp B &kp B &kp B &kp B &kp B &kp B
+                &kp A  &kp B  &kp C  &kp D  &kp E  &kp F  &kp G    &none &none &none &none &none &none &none &none
+                &kp H  &kp I  &kp J  &kp K  &kp L  &kp M  &kp N    &none &none &none &none &none &none &none &none
+                &kp O  &kp P  &kp Q  &kp R  &kp S  &kp T  &kp U    &none &none &none &none &none &none &none &none
+                &kp V  &kp W  &kp X  &kp Y  &kp Z  &kp N1 &kp N2   &none &none &none &none &none &none &none &none
+                &kp N3 &kp N4 &kp N5 &kp N6 &kp N7 &kp N8 &kp N9   &none &none &none &none &none &none &none &none
             >;
         };
     };
