@@ -6,7 +6,6 @@
 #include <zephyr/drivers/led_strip.h>
 #include <zephyr/init.h>
 #include <zephyr/kernel.h>
-#include <zephyr/logging/log.h>
 
 #include <zmk/event_manager.h>
 #include <zmk/events/battery_state_changed.h>
@@ -15,13 +14,11 @@
 #define LED_NODE DT_NODELABEL(cosmotyl_status_leds)
 #define PERIPHERAL_COUNT 2
 
-LOG_MODULE_REGISTER(cosmotyl_status_leds, LOG_LEVEL_INF);
-
 /* Physical receiver layout:
  *   pixel 1 = LEFT indicator
  *   pixel 0 = RIGHT indicator
  *
- * Provisional ZMK source mapping:
+ * Confirmed ZMK source mapping:
  *   source 0 = LEFT
  *   source 1 = RIGHT
  */
@@ -91,10 +88,6 @@ static void update_status_leds(struct k_work *work)
         }
     }
 
-    LOG_INF("battery cache: L=%u%% %s, R=%u%% %s",
-            (unsigned int)battery_level[0], battery_valid[0] ? "valid" : "waiting",
-            (unsigned int)battery_level[1], battery_valid[1] ? "valid" : "waiting");
-
     led_strip_update_rgb(strip, pixels, 2);
 
     blink_on = !blink_on;
@@ -112,7 +105,6 @@ static int battery_listener(const zmk_event_t *eh)
 
     if (ev->source < PERIPHERAL_COUNT) {
         battery_level[ev->source] = ev->state_of_charge;
-        LOG_INF("source %u battery %u%%", ev->source, ev->state_of_charge);
         battery_valid[ev->source] = true;
         k_work_reschedule(&status_work, K_NO_WAIT);
     }
