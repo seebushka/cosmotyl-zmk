@@ -6,14 +6,39 @@
         compatible = "zmk,keymap";
 
         default_layer {
+            /* Temporary encoder test action: 8 / 9 */
             sensor-bindings = <&inc_dec_kp N8 N9>;
 
             bindings = <
-                &none &none &none &none &none &none &none   &kp A  &kp B  &kp C  &kp D  &kp E  &kp F  &kp G  &kp H
-                &none &none &none &none &none &none &none   &kp I  &kp J  &kp K  &kp L  &kp M  &kp N  &kp O  &kp P
-                &none &none &none &none &none &none &none   &kp Q  &kp R  &kp S  &kp T  &kp U  &kp V  &kp W  &kp X
-                &none &none &none &none &none &none &none   &kp Y  &kp Z  &kp N1 &kp N2 &kp N3 &kp N4 &kp N5 &kp N6
-                &none &none &none &none &none &none &none   &kp N7 &kp N8 &kp N9 &kp N0 &kp MINUS &kp EQUAL &kp LBKT &kp RBKT
+                /* MATRIX ROW 0 */
+                /* LEFT:  `     5     4     3     2     1     SOUND */
+                &kp GRAVE &kp N5 &kp N4 &kp N3 &kp N2 &kp N1 &none
+                /* RIGHT: \     ]     [     BLANK CTRL  ENTER .     SHIFT */
+                &kp BSLH &kp RBKT &kp LBKT &none &kp LCTRL &kp ENTER &kp DOT &kp LSHFT
+
+                /* MATRIX ROW 1 */
+                /* LEFT:  TAB   W     L     Y     P     B     LIGHT */
+                &kp TAB &kp W &kp L &kp Y &kp P &kp B &none
+                /* RIGHT: SPACE unused ,     BSPC  X     H     unused / */
+                &kp SPACE &none &kp COMMA &kp BSPC &kp X &kp H &none &kp SLASH
+
+                /* MATRIX ROW 2 */
+                /* LEFT:  PGUP  C     R     S     T     G     REPLAY */
+                &kp PG_UP &kp C &kp R &kp S &kp T &kp G &none
+                /* RIGHT: unused A     I     REC   M     N     ;     E */
+                &none &kp A &kp I &none &kp M &kp N &kp SEMI &kp E
+
+                /* MATRIX ROW 3 */
+                /* LEFT:  unused SPACE J     V     D     K     BSPC */
+                &none &kp SPACE &kp J &kp V &kp D &kp K &kp BSPC
+                /* RIGHT: unused '     U     ARM   Z     F     -     O */
+                &none &kp SQT &kp U &none &kp Z &kp F &kp MINUS &kp O
+
+                /* MATRIX ROW 4 */
+                /* LEFT:  PGDN  Q     HOME  ESC   SHIFT ENTER CTRL */
+                &kp PG_DN &kp Q &kp HOME &kp ESC &kp LSHFT &kp ENTER &kp LCTRL
+                /* RIGHT: unused 0     9     A1    6     7     =     8 */
+                &none &kp N0 &kp N9 &none &kp N6 &kp N7 &kp EQUAL &kp N8
             >;
         };
     };
