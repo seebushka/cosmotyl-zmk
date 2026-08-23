@@ -1,4 +1,49 @@
 #include "cosmotyl.dtsi"
+#include <zephyr/dt-bindings/led/led.h>
+
+&pinctrl {
+    cosmotyl_led_spi_default: cosmotyl_led_spi_default {
+        group1 {
+            psels = <NRF_PSEL(SPIM_SCK, 0, 3),
+                     NRF_PSEL(SPIM_MOSI, 0, 2)>;
+        };
+    };
+
+    cosmotyl_led_spi_sleep: cosmotyl_led_spi_sleep {
+        group1 {
+            psels = <NRF_PSEL(SPIM_SCK, 0, 3),
+                     NRF_PSEL(SPIM_MOSI, 0, 2)>;
+            low-power-enable;
+        };
+    };
+};
+
+&spi3 {
+    compatible = "nordic,nrf-spim";
+    status = "okay";
+
+    #address-cells = <1>;
+    #size-cells = <0>;
+
+    pinctrl-0 = <&cosmotyl_led_spi_default>;
+    pinctrl-1 = <&cosmotyl_led_spi_sleep>;
+    pinctrl-names = "default", "sleep";
+
+    cosmotyl_status_leds: ws2812@0 {
+        compatible = "worldsemi,ws2812-spi";
+        reg = <0>;
+        spi-max-frequency = <4000000>;
+
+        chain-length = <2>;
+
+        spi-one-frame = <0x70>;
+        spi-zero-frame = <0x40>;
+
+        color-mapping = <LED_COLOR_ID_GREEN
+                         LED_COLOR_ID_RED
+                         LED_COLOR_ID_BLUE>;
+    };
+};
 
 / {
     chosen {
