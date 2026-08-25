@@ -1,5 +1,6 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/modifiers.h>
 
 / {
     behaviors {
@@ -8,6 +9,144 @@
             #binding-cells = <0>;
             tapping-term-ms = <250>;
             bindings = <&kp F24>, <&kp LC(LS(LA(A)))>;
+        };
+
+        /* Canary-style Ctrl shortcut morphs */
+        ctrl_t: ctrl_t {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp T>, <&kp F13>;
+            mods = <(MOD_LCTL | MOD_RCTL)>;
+        };
+        ctrl_r: ctrl_r {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp R>, <&kp F14>;
+            mods = <(MOD_LCTL | MOD_RCTL)>;
+        };
+        ctrl_s: ctrl_s {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp S>, <&kp F15>;
+            mods = <(MOD_LCTL | MOD_RCTL)>;
+        };
+        ctrl_y: ctrl_y {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp Y>, <&kp F16>;
+            mods = <(MOD_LCTL | MOD_RCTL)>;
+        };
+        ctrl_k: ctrl_k {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp K>, <&kp F17>;
+            mods = <(MOD_LCTL | MOD_RCTL)>;
+        };
+        ctrl_g: ctrl_g {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp G>, <&kp F18>;
+            mods = <(MOD_LCTL | MOD_RCTL)>;
+        };
+        ctrl_5: ctrl_5 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp N5>, <&kp F19>;
+            mods = <(MOD_LCTL | MOD_RCTL)>;
+        };
+        ctrl_4: ctrl_4 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp N4>, <&kp F20>;
+            mods = <(MOD_LCTL | MOD_RCTL)>;
+        };
+        ctrl_1: ctrl_1 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp N1>, <&kp F21>;
+            mods = <(MOD_LCTL | MOD_RCTL)>;
+        };
+        ctrl_v: ctrl_v {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp V>, <&kp F22>;
+            mods = <(MOD_LCTL | MOD_RCTL)>;
+        };
+        ctrl_b: ctrl_b {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp B>, <&kp F23>;
+            mods = <(MOD_LCTL | MOD_RCTL)>;
+        };
+
+        ctrl_o: ctrl_o {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp O>, <&kp UP>;
+            mods = <(MOD_LCTL | MOD_RCTL)>;
+        };
+        ctrl_e: ctrl_e {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp E>, <&kp DOWN>;
+            mods = <(MOD_LCTL | MOD_RCTL)>;
+        };
+        ctrl_n: ctrl_n {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp N>, <&kp LEFT>;
+            mods = <(MOD_LCTL | MOD_RCTL)>;
+        };
+        ctrl_i: ctrl_i {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp I>, <&kp RIGHT>;
+            mods = <(MOD_LCTL | MOD_RCTL)>;
+        };
+
+        ctrl_w: ctrl_w {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp W>, <&kp LC(X)>;
+            mods = <(MOD_LCTL | MOD_RCTL)>;
+        };
+        ctrl_q: ctrl_q {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp Q>, <&kp LC(V)>;
+            mods = <(MOD_LCTL | MOD_RCTL)>;
+        };
+        ctrl_l: ctrl_l {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp L>, <&kp LC(A)>;
+            mods = <(MOD_LCTL | MOD_RCTL)>;
+        };
+
+        /* Canary-style Shift special-key morphs */
+        shift_esc: shift_esc {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp ESC>, <&kp TAB>;
+            mods = <(MOD_LSFT | MOD_RSFT)>;
+        };
+        shift_pgup: shift_pgup {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp PG_UP>, <&kp HOME>;
+            mods = <(MOD_LSFT | MOD_RSFT)>;
+        };
+        shift_pgdn: shift_pgdn {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp PG_DN>, <&kp END>;
+            mods = <(MOD_LSFT | MOD_RSFT)>;
+        };
+        shift_bspc: shift_bspc {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp BSPC>, <&kp DEL>;
+            mods = <(MOD_LSFT | MOD_RSFT)>;
         };
     };
 
@@ -21,31 +160,31 @@
             bindings = <
                 /* MATRIX ROW 0 */
                 /* LEFT:  `     5     4     3     2     1     SOUND */
-                &kp GRAVE &kp N5 &kp N4 &kp N3 &kp N2 &kp N1 &kp F21
+                &kp GRAVE &ctrl_5 &ctrl_4 &kp N3 &kp N2 &ctrl_1 &kp F21
                 /* RIGHT: \     ]     [     CTRL+SHIFT CTRL  ENTER .     SHIFT */
                 &kp BSLH &kp RBKT &kp LBKT &kp LC(LSHFT) &kp LCTRL &kp ENTER &kp DOT &kp LSHFT
 
                 /* MATRIX ROW 1 */
                 /* LEFT:  TAB   W     L     Y     P     B     LIGHT */
-                &kp TAB &kp W &kp L &kp Y &kp P &kp B &kp F19
+                &kp TAB &ctrl_w &ctrl_l &ctrl_y &kp P &ctrl_b &kp F19
                 /* RIGHT: SPACE unused ,     BSPC  X     H     unused / */
                 &kp SPACE &none &kp COMMA &kp BSPC &kp X &kp H &none &kp SLASH
 
                 /* MATRIX ROW 2 */
                 /* LEFT:  PGUP  C     R     S     T     G     REPLAY */
-                &kp PG_UP &kp C &kp R &kp S &kp T &kp G &kp LA(F10)
+                &shift_pgup &kp C &ctrl_r &ctrl_s &ctrl_t &ctrl_g &kp LA(F10)
                 /* RIGHT: unused A     I     REC   M     N     ;     E */
-                &none &kp A &kp I &kp LA(F9) &kp M &kp N &kp SEMI &kp E
+                &none &kp A &ctrl_i &kp LA(F9) &kp M &ctrl_n &kp SEMI &ctrl_e
 
                 /* MATRIX ROW 3 */
                 /* LEFT:  unused SPACE J     V     D     K     BSPC */
-                &none &kp SPACE &kp J &kp V &kp D &kp K &kp BSPC
+                &none &kp SPACE &kp J &ctrl_v &kp D &ctrl_k &shift_bspc
                 /* RIGHT: unused '     U     ARM   Z     F     -     O */
-                &none &kp SQT &kp U &kp LC(LS(LA(Q))) &kp Z &kp F &kp MINUS &kp O
+                &none &kp SQT &kp U &kp LC(LS(LA(Q))) &kp Z &kp F &kp MINUS &ctrl_o
 
                 /* MATRIX ROW 4 */
                 /* LEFT:  PGDN  Q     GNOME ESC   SHIFT ENTER CTRL */
-                &kp PG_DN &kp Q &gnome_home &kp ESC &kp LSHFT &kp ENTER &kp LCTRL
+                &shift_pgdn &ctrl_q &gnome_home &shift_esc &kp LSHFT &kp ENTER &kp LCTRL
                 /* RIGHT: unused 0     9     A1    6     7     =     8 */
                 &none &kp N0 &kp N9 &kp F20 &kp N6 &kp N7 &kp EQUAL &kp N8
             >;
