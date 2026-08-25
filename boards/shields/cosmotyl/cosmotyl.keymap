@@ -2,6 +2,15 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
+    behaviors {
+        gnome_home: gnome_home {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <250>;
+            bindings = <&kp F24>, <&kp LC(LS(LA(A)))>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -35,8 +44,8 @@
                 &none &kp SQT &kp U &kp LC(LS(LA(Q))) &kp Z &kp F &kp MINUS &kp O
 
                 /* MATRIX ROW 4 */
-                /* LEFT:  PGDN  Q     HOME  ESC   SHIFT ENTER CTRL */
-                &kp PG_DN &kp Q &kp HOME &kp ESC &kp LSHFT &kp ENTER &kp LCTRL
+                /* LEFT:  PGDN  Q     GNOME ESC   SHIFT ENTER CTRL */
+                &kp PG_DN &kp Q &gnome_home &kp ESC &kp LSHFT &kp ENTER &kp LCTRL
                 /* RIGHT: unused 0     9     A1    6     7     =     8 */
                 &none &kp N0 &kp N9 &kp F20 &kp N6 &kp N7 &kp EQUAL &kp N8
             >;
