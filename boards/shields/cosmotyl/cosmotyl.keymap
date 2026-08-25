@@ -7,7 +7,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <250>;
-            bindings = <&kp LGUI>, <&kp LG(A)>;
+            bindings = <&kp F24>, <&kp LC(LS(LA(A)))>;
         };
     };
 
