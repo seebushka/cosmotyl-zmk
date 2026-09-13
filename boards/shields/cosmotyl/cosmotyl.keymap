@@ -146,7 +146,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp LS(EQUAL)>, <&kp EQUAL>;
-            mods = <(MOD_LCTL | MOD_RCTL)>;
+            mods = <(MOD_LCTL | MOD_RCTL | MOD_LSFT | MOD_RSFT)>;
         };
     };
 
@@ -159,14 +159,14 @@
 
             bindings = <
                 /* MATRIX ROW 0 */
-                /* LEFT:  `     5     4     3     2     1     SOUND */
-                &kp GRAVE &ctrl_5 &ctrl_4 &ctrl_3 &ctrl_2 &ctrl_1 &kp F21
+                /* LEFT:  +     5     4     3     2     1     SOUND */
+                &ctrl_plus &ctrl_5 &ctrl_4 &ctrl_3 &ctrl_2 &ctrl_1 &kp F21
                 /* RIGHT: \     ]     [     CTRL+SHIFT CTRL  ENTER .     SHIFT */
                 &kp BSLH &kp RBKT &kp LBKT &kp LC(LSHFT) &kp LCTRL &kp ENTER &kp DOT &kp LSHFT
 
                 /* MATRIX ROW 1 */
-                /* LEFT:  TAB   W     L     Y     P     B     LIGHT */
-                &kp TAB &ctrl_w &ctrl_l &ctrl_y &kp P &ctrl_b &kp F19
+                /* LEFT:  -     W     L     Y     P     B     LIGHT */
+                &ctrl_minus &ctrl_w &ctrl_l &ctrl_y &kp P &ctrl_b &kp F19
                 /* RIGHT: SPACE unused ,     BSPC  X     H     unused / */
                 &lt SPACE_LAYER SPACE &none &kp COMMA &kp BSPC &kp X &kp H &none &kp SLASH
 
@@ -180,27 +180,27 @@
                 /* LEFT:  unused SPACE J     V     D     K     BSPC */
                 &none &lt SPACE_LAYER SPACE &kp J &ctrl_v &ctrl_d &ctrl_k &kp BSPC
                 /* RIGHT: unused '     U     ARM   Z     F     -     O */
-                &none &kp SQT &kp U &kp LC(LS(LA(Q))) &kp Z &kp F &ctrl_minus &kp O
+                &none &kp SQT &kp U &kp LC(LS(LA(Q))) &kp Z &kp F &kp MINUS &kp O
 
                 /* MATRIX ROW 4 */
                 /* LEFT:  PGDN  Q     GNOME ESC   SHIFT ENTER CTRL */
                 &ctrl_pgdn &ctrl_q &gnome_home &ctrl_esc &kp LSHFT &kp ENTER &kp LCTRL
-                /* RIGHT: unused 0     9     A1    6     7     +     8 */
-                &none &kp N0 &kp N9 &kp F20 &kp N6 &kp N7 &ctrl_plus &kp N8
+                /* RIGHT: unused 0     9     A1    6     7     `     8 */
+                &none &kp N0 &kp N9 &kp F20 &kp N6 &kp N7 &kp GRAVE &kp N8
             >;
         };
 
         space_layer {
             bindings = <
                 /* MATRIX ROW 0 */
-                /* LEFT:  `     5->6  4->7  3->8  2->9  1->0  SOUND */
-                &trans &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &trans
+                /* LEFT:  +->(  5->6  4->7  3->8  2->9  1->0  SOUND */
+                &kp LS(N9) &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &trans
                 /* RIGHT */
                 &trans &trans &trans &trans &trans &trans &trans &trans
 
                 /* MATRIX ROW 1 */
-                /* LEFT:  TAB   W     L     Y->UP P->.  B     LIGHT */
-                &trans &trans &trans &kp UP &kp DOT &trans &trans
+                /* LEFT:  -->)  W     L     Y->UP P->.  B     LIGHT */
+                &kp LS(N0) &trans &trans &kp UP &kp DOT &trans &trans
                 /* RIGHT */
                 &trans &trans &trans &trans &trans &trans &trans &trans
 
@@ -213,14 +213,14 @@
                 /* MATRIX ROW 3 */
                 /* LEFT */
                 &trans &trans &trans &trans &trans &trans &trans
-                /* RIGHT: unused '     U     ARM   Z     F     -->)  O->UP */
-                &trans &trans &trans &trans &trans &trans &kp LS(N0) &kp UP
+                /* RIGHT: unused '     U     ARM   Z     F     -     O->UP */
+                &trans &trans &trans &trans &trans &trans &trans &kp UP
 
                 /* MATRIX ROW 4 */
                 /* LEFT */
                 &trans &trans &trans &trans &trans &trans &trans
-                /* RIGHT: unused 0     9     A1    6     7     +->(  8 */
-                &trans &trans &trans &trans &trans &trans &kp LS(N9) &trans
+                /* RIGHT: unused 0     9     A1    6     7     `     8 */
+                &trans &trans &trans &trans &trans &trans &trans &trans
             >;
         };
     };
